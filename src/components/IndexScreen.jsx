@@ -6,8 +6,14 @@ import {
   CardHeader,
   CardTitle,
 } from "./ui/card";
-import { Mail, MapPin, Phone, ExternalLink } from "lucide-react";
+import { Mail, MapPin, Phone, ExternalLink, Download } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "./ui/dropdown-menu";
 import { FaReact } from "react-icons/fa6";
 import { SiTypescript } from "react-icons/si";
 import { IoLogoJavascript } from "react-icons/io";
@@ -135,7 +141,7 @@ export default function IndexScreen({ lang }) {
             technologies: ["React", "Node.js", "MongoDB"],
             status: "Activo",
             type: "Aplicación Web",
-            image: "/mycv/cv/logoposada.png",
+            image: "/cv/logoposada.png",
           },
         ],
       };
@@ -254,7 +260,7 @@ export default function IndexScreen({ lang }) {
             technologies: ["React", "Node.js", "MongoDB"],
             status: "Active",
             type: "Web Application",
-            image: "/mycv/cv/logoposada.png",
+            image: "/cv/logoposada.png",
           },
         ],
       };
@@ -272,7 +278,7 @@ export default function IndexScreen({ lang }) {
           <div class="flex flex-col md:flex-row items-center md:items-start gap-8 mb-8">
             <div class="shrink-0">
               <img
-                src="/mycv/cv/arol.jpeg"
+                src="/cv/arol.jpeg"
                 alt="Foto de perfil"
                 className="w-48 h-48 rounded-full object-cover border-4 border-gray-200"
               />
@@ -295,6 +301,59 @@ export default function IndexScreen({ lang }) {
                 <span className="flex items-center gap-4 text-sm">
                   <MapPin className="h-4 w-4" /> {information.location}
                 </span>
+              </div>
+
+              {/* Download CV Button */}
+              <div className="mt-6 flex justify-center md:justify-start">
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <button className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-200 shadow-lg hover:shadow-xl">
+                      <Download className="h-5 w-5" />
+                      {lang === "es" ? "Descargar CV" : "Download CV"}
+                    </button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent className="w-64" align="start">
+                    <DropdownMenuItem
+                      onClick={() => {
+                        const link = document.createElement("a");
+                        link.href = "/cv/Daniel_Arol_CV_ES.pdf";
+                        link.download = "Daniel_Arol_CV_ES.pdf";
+                        link.click();
+                      }}
+                      className="flex items-center gap-3 p-3 cursor-pointer"
+                    >
+                      <span className="text-2xl">🇪🇸</span>
+                      <div className="flex flex-col">
+                        <span className="font-medium">Español</span>
+                        <span className="text-sm text-gray-500">
+                          {lang === "es"
+                            ? "Currículum en español"
+                            : "Resume in Spanish"}
+                        </span>
+                      </div>
+                    </DropdownMenuItem>
+
+                    <DropdownMenuItem
+                      onClick={() => {
+                        const link = document.createElement("a");
+                        link.href = "/cv/Daniel_Arol_CV_EN.pdf";
+                        link.download = "Daniel_Arol_CV_EN.pdf";
+                        link.click();
+                      }}
+                      className="flex items-center gap-3 p-3 cursor-pointer"
+                    >
+                      <span className="text-2xl">🇺🇸</span>
+                      <div className="flex flex-col">
+                        <span className="font-medium">English</span>
+                        <span className="text-sm text-gray-500">
+                          {lang === "es"
+                            ? "Currículum en inglés"
+                            : "Resume in English"}
+                        </span>
+                      </div>
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
               </div>
             </div>
           </div>

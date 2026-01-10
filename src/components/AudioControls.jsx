@@ -115,7 +115,7 @@ const AudioControls = () => {
   return (
     <div className="flex items-center gap-4 text-white">
       <audio ref={audioRef} preload="auto">
-        <source src="/mycv/mp3/track01.mp3" type="audio/mpeg" />
+        <source src="/mp3/track01.mp3" type="audio/mpeg" />
         Your browser does not support the audio element.
       </audio>
 
