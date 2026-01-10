@@ -1,0 +1,17 @@
+{
+    "nav": {
+        "inicio": "Inicio",
+        "acerca": "Acerca",
+        "contacto": "Contacto",
+        "discos": "Discos",
+        "artistas": "Artistas",
+        "mixer": "Mixer"
+    },
+    "home": {
+        "title": "Tu Nombre",
+        "subtitle": "Desarrollador Full Stack",
+        "about_title": "Sobre mí",
+        "about_description": "Soy un desarrollador apasionado con experiencia en tecnologías modernas como React, Node.js y bases de datos.",
+        "skills_title": "Habilidades"
+    }
+}
