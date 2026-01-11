@@ -12,9 +12,9 @@ export default function LanguageIcon() {
   const [currentLang, setCurrentLang] = useState("ES");
 
   useEffect(() => {
-    // Obtener idioma actual de la URL o localStorage
+    // Obtener idioma actual de la URL
     const path = window.location.pathname;
-    const urlLang = path.startsWith("/en") ? "EN" : "ES";
+    const urlLang = path.includes("/en/") ? "EN" : "ES";
     setCurrentLang(urlLang);
   }, []);
 
@@ -23,20 +23,15 @@ export default function LanguageIcon() {
     localStorage.setItem("preferred-language", lang);
 
     // Cambiar la URL para reflejar el nuevo idioma
-    const currentPath = window.location.pathname;
-    let newPath;
+    const baseUrl = window.location.origin;
 
     if (lang === "en") {
-      // Agregar /en al inicio de la ruta
-      newPath = currentPath.startsWith("/en")
-        ? currentPath
-        : `/en${currentPath}`;
+      // Ir a /mycv/en/
+      window.location.href = `${baseUrl}/mycv/en/`;
     } else {
-      // Quitar /en del inicio de la ruta
-      newPath = currentPath.replace(/^\/en/, "") || "/";
+      // Ir a /mycv/
+      window.location.href = `${baseUrl}/mycv/`;
     }
-
-    window.location.href = newPath;
   };
 
   return (
