@@ -8,6 +8,13 @@ export default defineConfig({
   output: "static",
   site: "https://a-r-o-l.github.io",
   base: "/mycv",
+  i18n: {
+    defaultLocale: "es",
+    locales: ["es", "en"],
+    routing: {
+      prefixDefaultLocale: false,
+    },
+  },
   integrations: [react()],
   vite: {
     plugins: [tailwindcss()],
