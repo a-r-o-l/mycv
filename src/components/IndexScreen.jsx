@@ -141,7 +141,7 @@ export default function IndexScreen({ lang }) {
             technologies: ["React", "Node.js", "MongoDB"],
             status: "Activo",
             type: "Aplicación Web",
-            image: import.meta.env.BASE_URL + "cv/logoposada.png",
+            image: "/mycv/cv/logoposada.png",
           },
         ],
       };
@@ -260,7 +260,7 @@ export default function IndexScreen({ lang }) {
             technologies: ["React", "Node.js", "MongoDB"],
             status: "Active",
             type: "Web Application",
-            image: import.meta.env.BASE_URL + "cv/logoposada.png",
+            image: "/mycv/cv/logoposada.png",
           },
         ],
       };
@@ -278,7 +278,7 @@ export default function IndexScreen({ lang }) {
           <div class="flex flex-col md:flex-row items-center md:items-start gap-8 mb-8">
             <div class="shrink-0">
               <img
-                src={import.meta.env.BASE_URL + "cv/arol.jpeg"}
+                src="/mycv/cv/arol.jpeg"
                 alt="Foto de perfil"
                 className="w-48 h-48 rounded-full object-cover border-4 border-gray-200"
               />
@@ -316,8 +316,7 @@ export default function IndexScreen({ lang }) {
                     <DropdownMenuItem
                       onClick={() => {
                         const link = document.createElement("a");
-                        link.href =
-                          import.meta.env.BASE_URL + "cv/Daniel_Arol_CV_ES.pdf";
+                        link.href = "/mycv/cv/Daniel_Arol_CV_ES.pdf";
                         link.download = "Daniel_Arol_CV_ES.pdf";
                         link.click();
                       }}
@@ -337,8 +336,7 @@ export default function IndexScreen({ lang }) {
                     <DropdownMenuItem
                       onClick={() => {
                         const link = document.createElement("a");
-                        link.href =
-                          import.meta.env.BASE_URL + "cv/Daniel_Arol_CV_EN.pdf";
+                        link.href = "/mycv/cv/Daniel_Arol_CV_EN.pdf";
                         link.download = "Daniel_Arol_CV_EN.pdf";
                         link.click();
                       }}
